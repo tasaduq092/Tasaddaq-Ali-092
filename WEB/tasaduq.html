@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff; 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .row .block {
+        flex: 1;
+        margin-right: 10px;
+    }
+    .row .block:last-child {
+        margin-right: 0;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border-color 0.3s ease; 
+    }
+    input[type="submit"], input[type="reset"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049; 
+    }
+    input[type="submit"]:focus, input[type="reset"]:focus {
+        outline: none;
+    }
+    input:required:focus, select:required:focus, textarea:required:focus {
+        border-color: blue;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    #registration-form {
+        display: flex;
+        flex-direction: column;
+    }
+    #registration-form input[type="submit"] {
+        align-self: flex-start;
+    }
+    #registration-form input[type="reset"] {
+        align-self: flex-end;
+    }
+</style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Student Registration Form</h2>
+    <p>Fill out the form carefully for registration</p>
+    <form id="registration-form" action="#" method="post">
+        <div class="row">
+            <div class="block">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" maxlength="20" required pattern="[A-Za-z]+" placeholder="First name">
+            </div>
+            <div class="block">
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" name="middle-name" maxlength="20" pattern="[A-Za-z]+" placeholder="Middle name">
+            </div>
+            <div class="block">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" maxlength="20" required pattern="[A-Za-z]+" placeholder="Last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="birth-date">Birth Date:</label>
+                <div class="date-block">
+                    <input type="number" id="birth-month" name="birth-month" min="1" max="12" placeholder="MM" required>
+                    <input type="number" id="birth-day" name="birth-day" min="1" max="31" placeholder="DD" required>
+                    <input type="number" id="birth-year" name="birth-year" min="1900" max="2024" placeholder="YYYY" required>
+                </div>
+            </div>
+            <div class="block">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" maxlength="250" required placeholder="Enter address">
+            </div>
+            <div class="block">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" maxlength="50" required placeholder="Enter city">
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state" maxlength="50" required placeholder="Enter state/province">
+            </div>
+            <div class="block">
+                <label for="postal-code">Postal Code:</label>
+                <input type="text" id="postal-code" name="postal-code" maxlength="5" required pattern="[0-9]{5}" placeholder="Enter postal code">
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone-number" maxlength="12" pattern="[0-9]{10,12}" placeholder="Enter phone number">
+            </div>
+            <div class="block">
+                <label for="work-number">Work Number:</label>
+                <input type="tel" id="work-number" name="work-number" maxlength="12" pattern="[0-9]{10,12}" placeholder="Enter work number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="student-email">Student Email:</label>
+                <input type="email" id="student-email" name="student-email" maxlength="250" required placeholder="Enter student email">
+            </div>
+            <div class="block">
+                <label for="mobile-number">Mobile Number:</label>
+                <input type="tel" id="mobile-number" name="mobile-number" maxlength="12" required pattern="[0-9]{10,12}" placeholder="Enter mobile number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="block">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" maxlength="150" required placeholder="Enter company name">
+            </div>
+            <div class="block">
+                <label for="courses">Courses:</label>
+                <select id="courses" name="courses" required>
+                    <option value="">Select</option>
+                    <option value="course1">Course 1</option>
+                    <option value="course2">Course 2</option>
+                    
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="additional-comments">Additional Comments:</label>
+            <textarea id="additional-comments" name="additional-comments" maxlength="500" placeholder="Enter additional comments"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear Fields">
+    </form>
+</div>
+</body>
+</html>
